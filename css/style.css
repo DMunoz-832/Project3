@@ -77,16 +77,6 @@
     padding: 20px;
   }
 
-  /*centering images*/
-  .center {  
-    width: 400px;  
-    height: 150px;  
-    border: 5px solid red;  
-    background-color: lightgreen;  
-    object-fit: none;  
-    object-position: center top;  
-    }  
-    
     /*vertical line between text*/
     .vertical-line{
       display: inline-block;
@@ -98,4 +88,11 @@
   /*lists style*/
   ul.a {
     list-style-type: circle;
+  }
+
+  /*centering text*/
+  .center {
+    text-align: center;
+    object-fit: none;  
+    object-position: center top; 
   }
