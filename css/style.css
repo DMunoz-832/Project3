@@ -29,7 +29,7 @@
   /* Style top nav bar */
   .navbar {
     overflow: hidden;
-    background-color: #333;
+    background-color: rgb(34, 27, 27);
   }
   
   /* Style nav bar links */
@@ -61,7 +61,6 @@
     flex-wrap: wrap;
   }
   
-  /* Create two unequal columns that sits next to each other */
   /* Sidebar/left column */
   .side {
     -ms-flex: 5%; /* IE10 */
