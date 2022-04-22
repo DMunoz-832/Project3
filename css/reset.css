@@ -2,6 +2,7 @@
 @media screen and (max-width: 700px) {
     .row {   
       flex-direction: column;
+      /*personal images*/
     }
   }
   
@@ -10,5 +11,6 @@
     .navbar a {
       float: none;
       width: 100%;
+      /*personal additions*/
     }
   }

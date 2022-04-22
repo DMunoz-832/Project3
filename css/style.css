@@ -96,3 +96,10 @@
     object-fit: none;  
     object-position: center top; 
   }
+
+  /*centering images*/
+  .img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
