@@ -8,7 +8,7 @@ function initMap() {
     };
     var googlemap = new google.maps.Map(document.getElementById("map"), mapOptions);
 }
-
+/*
 addMarker({
     coords:adler,
     iconImage: 'https://www.adlerplanetarium.org/wp-content/uploads/IMG0020.jpg',
@@ -32,7 +32,7 @@ function addMarker(props) {
       position: props.coords,
       map: map,
     });
-  
+
     //check for icon
     if(props.iconImage){
       marker.setIcon(props.iconImage);
@@ -55,3 +55,4 @@ function addMarker(props) {
     });
    }
   window.addEventListener('load', initMap)
+*/
