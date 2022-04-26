@@ -14,7 +14,7 @@
   }
 
   /* Header */
-  .header {
+  #header {
     padding: 40px;
     text-align: center;
     background: #0e3281;
@@ -22,18 +22,18 @@
   }
   
   /* Bigger font size for heading */
-  .header h1 {
+  #header h1 {
     font-size: 40px;
   }
   
   /* Style top nav bar */
-  .navbar {
+  #navbar {
     overflow: hidden;
     background-color: rgb(34, 27, 27);
   }
   
   /* Style nav bar links */
-  .navbar a {
+  #navbar a {
     float: left;
     display: block;
     color: white;
@@ -43,18 +43,18 @@
   }
   
   /* Right-aligned link */
-  .navbar a.right {
+  #navbar a.right {
     float: right;
   }
   
   /* Change color on hover */
-  .navbar a:hover {
+  #navbar a:hover {
     background-color: #ddd;
     color: black;
   }
   
   /* Column container */
-  .row {  
+  #row {  
     display: -ms-flexbox; /* IE10 */
     display: flex;
     -ms-flex-wrap: wrap; /* IE10 */
@@ -62,7 +62,7 @@
   }
   
   /* Sidebar/left column */
-  .side {
+  #side {
     -ms-flex: 5%; /* IE10 */
     flex: 5%;
     background-color: #72594ef6;
@@ -70,7 +70,7 @@
   }
   
   /* Main column */
-  .main {   
+  #main {   
     -ms-flex: 70%; /* IE10 */
     flex: 70%;
     background-color: #a37967f3;
@@ -78,7 +78,7 @@
   }
 
     /*vertical line between text*/
-    .vertical-line{
+    #vertical-line{
       display: inline-block;
       border-left: 2px solid #ccc;
       margin: 0 00px;
@@ -91,14 +91,14 @@
   }
 
   /*centering text*/
-  .center {
+  #center {
     text-align: center;
     object-fit: none;  
     object-position: center top; 
   }
 
   /*centering images*/
-  .img {
+  #img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -106,13 +106,11 @@
   
   /*map size*/
   #map {
-    width: 600px;
-    height: 550px;
-    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+    height: 400px;
+    width: 80%;
+    margin-left: 10%;
   }
-  
-  #map {
-   width: 100%;
-   height: 400px;
-   background-color: grey;
- }
+
+
