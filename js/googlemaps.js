@@ -1,39 +1,63 @@
-function init() {
-    var AdlerPlanet = new google.maps.LatLng(41.8661, 87.6196);
-    var mapOp = {
-        zoom: 13,
-        center: AdlerPlanet,
-		mapTypeId: 'satellite'
-		};	
-    var Map = new google.maps.Map(mapOp);
-
-    var marker = new google.maps.Marker({
-        position: AdlerPlanet,
-        map: Map,
-        title: "Adler Planetarium",
-        animation: google.maps.Animation.BOUNCE,
-        icon: 'images/bottle.png'
+$(document).ready(function(){
+    $('.slider').bxSlider();
+   });
+   
+   // Initialize and add the map
+   function initMap() {
+     // Location 1
+    const adler = { lat: 41.8661, lng: 87.6196 };
+    //location 2
+    const IIT = {lat:41.83, lng:-87.6298};
+    //location 3
+    const chicken = {lat:41.810032, lng: -87.704253};
+    //The map, centered
+    const map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 11,
+      center: chicago,
     });
-
-    var conString = '<h1>Adler Planetarium</h1>>';
-    var infowindow = new google.maps.InfoWindow({
-        content: conString
+    
+   addMarker({
+     coords:adler,
+     iconImage: 'https://www.adlerplanetarium.org/wp-content/uploads/IMG0020.jpg',
+     content: '<h1>Adler Planetarium</h1>',
+   });
+   addMarker({
+     coords:IIT,
+     iconImage: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Illinois_Institute_of_Technology_%28seal%29.svg/1200px-Illinois_Institute_of_Technology_%28seal%29.svg.png',
+     content: '<h1>IIT Chicago</h1>',
+   });
+   addMarker({
+    coords:chicken,
+    iconImage: 'https://cdn.britannica.com/07/183407-050-C35648B5/Chicken.jpg',
+    content: '<h1>Windy City Poultry</h1>',
+  });
+   
+    function addMarker(props) {
+     const marker = new google.maps.Marker({
+       position: props.coords,
+       map: map,
+     });
+   
+     //check for icon
+     if(props.iconImage){
+       marker.setIcon(props.iconImage);
+     }
+   
+    //check for content
+    if(props.content){
+      var infoWindow = new google.maps.InfoWindow({
+      content:props.content
     });
-
-    google.maps.event.addListener(marker, 'mouseover', function() {
-        infowindow.open(Map, marker);
+   
+    marker.addListener('click', function(){
+      infoWindow.open(map, marker);
     });
-
-    marker.addListener("click", toggleBounce);
-
-    function toggleBounce() {
-        if (marker.getAnimation() !== null) {
-            marker.setAnimation(null);
-        } else {
-            marker.setAnimation(google.maps.Animation.BOUNCE);
-        }
+     }
+   
+     //add marker on click
+     google.maps.event.addListener(map, 'click', function(event){
+       addMarker({coords:event.latLng});
+     });
     }
-
-}
-
-google.maps.event.addDomListener(window, 'load', init);
+   }
+   window.addEventListener('load', initMap)
