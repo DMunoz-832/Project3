@@ -20,7 +20,7 @@ function initMap() {
   var marker2 = new google.maps.Marker({
 		position: new google.maps.LatLng(41.8349, 87.6270),
 		map: map, 
-        iconImage: 'https://upload.wikimedia.org/wikipedia/en/thumb/9/96/Illinois_Institute_of_Technology_%28seal%29.svg/1200px-Illinois_Institute_of_Technology_%28seal%29.svg.png'
+        iconImage: 'https://d2jyir0m79gs60.cloudfront.net/college/logos/Illinois_Institute_of_Technology.gif'
   });
   var infowindow2 = new google.maps.InfoWindow({
     content: "<h1>IIT Chicago</h1><p>Funny enough, put IIT on Google and you get the Indian Institutes of Technology, hence the Chicago at the end<p>"
@@ -34,7 +34,7 @@ google.maps.event.addDomListener(window, 'load', initMap);
 var marker3 = new google.maps.Marker({
     position: new google.maps.LatLng(41.8349, 87.6270),
     map: map, 
-    iconImage: 'https://cdn.britannica.com/07/183407-050-C35648B5/Chicken.jpg'
+    iconImage: 'https://cdn.mos.cms.futurecdn.net/BX7vjSt8KMtcBHyisvcSPK.jpg'
 });
 var infowindow3 = new google.maps.InfoWindow({
 content: "<h1>Windy City Poultry</h1><p>Cheap chicken feed for Paco<p>"

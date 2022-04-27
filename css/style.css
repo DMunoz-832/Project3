@@ -112,3 +112,8 @@
       width: 80%;
       margin-left: 10%;
 }
+
+.adlerImage {
+  width: auto;
+  height: min-content;
+}
