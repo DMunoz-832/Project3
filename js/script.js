@@ -32,10 +32,10 @@ function initMap() {
     google.maps.event.addDomListener(window, 'load', initMap);
 
 //IIT Chicago Marker
-var iitImage = {
+  var iitImage = {
   url: "https://www.iit.edu/sites/default/files/2020-08/illinois-tech-logo-thumbnail.png",
   scaledSize: new google.maps.Size(100, 100),
-};
+  };
 
 const iitMarker = new google.maps.Marker({
   position: iit,
@@ -77,3 +77,26 @@ chickenInfoWindow.open(map, chickenMarker);
 
 google.maps.event.addDomListener(window, 'load', initMap);
   }
+
+  //code for slider
+var slide_index = 1;
+slidesDisplay(slide_index);
+
+function nextSlide(n) {
+  slidesDisplay(slide_index += n);
+}
+  
+function currentSlide(n) {
+  slidesDisplay(slide_index = n);
+}
+  
+function slidesDisplay(n) {
+  var i;
+  var slides = document.getElementsByClassName("showSlider");
+  if (n > slides.length) { slide_index = 1 }
+  if (n < 1) { slide_index = slides.length }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slide_index - 1].style.display = "block";
+}
