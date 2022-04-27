@@ -1,21 +1,45 @@
 function initMap() {
     const adler = { lat: 41.866344, lng: -87.607402 };
     const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 6,
+      zoom: 12,
       center: adler,
       mapTypeId: "terrain",
     });
-
-    var icon1 = {
+//Adler Marker 
+    var adlerImage = {
         url: "https://www.adlerplanetarium.org/wp-content/uploads/IMG0020.jpg",
         scaledSize: new google.maps.Size(100, 100),
       };
 
-    const marker = new google.maps.Marker({
+    const adlerMarker = new google.maps.Marker({
         position: adler,
-        map: map,
-        icon: icon1,
+        map,
+        icon: adlerImage,
     });
+    //information Window
+    var infoWindow = new google.maps.InfoWindow({
+      content: "<h1>Adler Planetarium</h1><p>I've only been here once when I was a kid but I enjoyed every minute of it, especially looking at the mini planet demonstrations they had on display<p>"
+    });
+    google.maps.event.addListener(adlerMarker, 'mouseover', function() {
+      infoWindow.open(map, adlerMarker);
+    });
+
+//Other Marker coordinates
+    const iit = { lat: 41.8349, lng: 87.6270 };
+    const chicken = { lat: 41.923702499459694, lng: -87.7754261104509 };
+
+//IIT Chicago Marker
+    var iitImage = {
+        url: "https://d2jyir0m79gs60.cloudfront.net/college/logos/Illinois_Institute_of_Technology.gif",
+        scaledSize: new google.maps.Size(100,100),
+    };
+
+    const iitMarker = new google.maps.Marker({
+        position:iit,
+        map,
+        icon:iitImage,
+    });
+  }
   /*working code
   //Adler Marker 1
   var marker = new google.maps.Marker({
@@ -76,4 +100,3 @@ infowindow3.open(map, marker2);
 });
 google.maps.event.addDomListener(window, 'load', initMap);
 */
-}
