@@ -68,7 +68,7 @@ const chickenMarker = new google.maps.Marker({
 
 //information Window
 var chickenInfoWindow = new google.maps.InfoWindow({
-content: "<h1>John's Live Poultry</h1><p>I mean I only go there for the cheap chicken feed...not to see the poor ones get killed.<p>"
+content: "<h1>John's Live Poultry</h1><p>I mean I only go there for the cheap chicken feed. Not to see the poor ones get killed T-T<p>"
 });
 
 google.maps.event.addListener(chickenMarker, 'mouseover', function() {
