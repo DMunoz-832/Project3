@@ -1,16 +1,26 @@
-//center of map
-var map;
 function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 41.866344, lng: -87.607402},
-    zoom: 16
-  });
+    const adler = { lat: 41.866344, lng: -87.607402 };
+    const map = new google.maps.Map(document.getElementById("map"), {
+      zoom: 6,
+      center: adler,
+      mapTypeId: "terrain",
+    });
 
+    var icon1 = {
+        url: "https://www.adlerplanetarium.org/wp-content/uploads/IMG0020.jpg",
+        scaledSize: new google.maps.Size(100, 100),
+      };
+
+    const marker = new google.maps.Marker({
+        position: adler,
+        map: map,
+        icon: icon1,
+    });
+  /*working code
   //Adler Marker 1
   var marker = new google.maps.Marker({
 		position: new google.maps.LatLng(41.866344, -87.607402),
 		map: map, 
-        iconImage: 'https://www.adlerplanetarium.org/wp-content/uploads/IMG0020.jpg'
   });
   //Info window about Adler
   var infowindow = new google.maps.InfoWindow({
@@ -19,7 +29,21 @@ function initMap() {
   google.maps.event.addListener(marker, 'mouseover', function() {
     infowindow.open(map, marker);
   });
-
+    //IIT Chicago Marker 2
+    var marker = new google.maps.Marker({
+		position: new google.maps.LatLng(41.8349, 87.6270),
+		map: map, 
+        iconImage: ''
+  });
+  //Info window about Adler
+  var infowindow = new google.maps.InfoWindow({
+    content: "<h1>Adler Planetarium</h1><p>I've only been here once when I was a kid but I enjoyed every minute of it, especially looking at the mini planet demonstrations they had on display<p>"
+  });
+  google.maps.event.addListener(marker, 'mouseover', function() {
+    infowindow.open(map, marker);
+  });
+*/
+  
 
   /*
   //IIT Chicago Marker 2
